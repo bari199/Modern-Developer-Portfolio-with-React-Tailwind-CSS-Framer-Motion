@@ -14,8 +14,8 @@ const ContactSection = () => {
     email: "",
     message: "",
   });
-  const [showSuccess, setShowSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
@@ -27,26 +27,44 @@ const ContactSection = () => {
 
   const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
+  // Only updates form state
   const handleInputChange = (key, value) => {
-    setFormData({
-      ...formData,
-      [key]: value,
-    });
+    setFormData({ ...formData, [key]: value });
   };
 
+  // Handles actual form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Please fill all fields");
+      return;
+    }
+
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const res = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setShowSuccess(true);
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setShowSuccess(false), 3000);
+      } else {
+        alert("Failed to send message.");
+      }
+    } catch (error) {
+      console.log(error);
+      alert("Error sending message.");
+    }
 
     setIsSubmitting(false);
-    setShowSuccess(true);
-    setFormData({ name: "", email: "", message: "" });
-
-    // Auto hide success modal after 3 seconds
-    setTimeout(() => setShowSuccess(false), 3000);
   };
 
   return (
@@ -197,7 +215,7 @@ const ContactSection = () => {
             <motion.div variants={itemVariants}>
               <h3 className="text-2xl font-medium mb-6">Contact Information</h3>
               <div className="space-y-4">
-                {CONTACT_INFO.map((info, index) => (
+                {CONTACT_INFO.map((info) => (
                   <motion.div
                     key={info.label}
                     variants={itemVariants}
@@ -271,9 +289,7 @@ const ContactSection = () => {
                 </span>
               </div>
               <p
-                className={`text-sm ${
-                  isDarkMode ? "text-gray-400" : "text-gray-600"
-                }`}
+                className={`text-sm ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}
               >
                 I'm currently available for freelance projects and full-time
                 opportunities.
@@ -298,11 +314,7 @@ const ContactSection = () => {
             }`}
           >
             <h3 className="text-xl font-medium mb-4">Prefer a quick call?</h3>
-            <p
-              className={`${
-                isDarkMode ? "text-gray-400" : "text-gray-600"
-              } mb-6`}
-            >
+            <p className={`${isDarkMode ? "text-gray-400" : "text-gray-600"} mb-6`}>
               Sometimes a conversation is worth a thousand messages. Feel free
               to schedule a call to discuss your project.
             </p>

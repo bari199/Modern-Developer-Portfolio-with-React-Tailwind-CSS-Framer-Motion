@@ -106,7 +106,7 @@ export const PROJECTS = [
     id: 1,
     title: "Food Delivery App",
     description:
-      "A full-stack e-commerce solution with advanced filtering, payment integration, and real-time inventory management.",
+      "A MERN-based food delivery app that includes user authentication, restaurant and menu browsing, cart and order management, real-time order status updates, and secure checkout with integrated payment gateways.",
     image: PROJECT_IMG_1,
     tags: ["React", "Tailwind", "Express.js", "Node.js", "MongoDB"],
     liveUrl: "https://food-delivary-app-front.onrender.com/",
@@ -118,7 +118,7 @@ export const PROJECTS = [
     id: 2,
     title: "Chat Application using MERN stack ",
     description:
-      "A full-stack blog app using the MERN stack — with full Markdown support, tag filtering, and an integrated AI-powered blog post generator!",
+      "A real-time chat application built with the MERN stack and Socket.io, featuring user authentication, instant messaging, online status updates, and a responsive UI.",
     image: PROJECT_IMG_2,
     tags: ["React", "Node.js", "MongoDB", "Tailwind","Express.js"],
     liveUrl: "https://build-real-time-full-stack-chat-app-lilac.vercel.app/",
@@ -130,7 +130,7 @@ export const PROJECTS = [
     id: 3,
     title: "E-commerce Websites",
     description:
-      "Collaborative project management tool with real-time updates, team chat, and advanced analytics dashboard.",
+      "A MERN-based e-commerce platform with secure payments using Stripe and Razorpay, along with full cart, checkout, order tracking, and admin product management.",
     image: PROJECT_IMG_3,
     tags: ["Express.js", "React.js", "Node.js", "MongoDb", "tailwind.css", "Jwt", "Stripe", "Razorpay"],
     liveUrl: "https://e-commerce-client-delta-opal.vercel.app/",
@@ -153,27 +153,27 @@ export const PROJECTS = [
 
   {
     id: 5,
-    title: "Resume Builder App",
+    title: "Blog App with AI",
     description:
-      "a fully functional Resume Builder App using the MERN stack along with Tailwind CSS for a clean, modern UI.",
+      "A responsive portfolio and blog app with smooth animations, Express backend APIs, and integrated Gemini AI for content creation.",
     image: PROJECT_IMG_5,
-    tags: ["Next.js", "TypeScript", "Node.js", "MongoDb"],
-    liveUrl: "https://youtu.be/q3u_fpkjLk8",
-    githubUrl: "#",
-    featured: false,
+    tags: ["Next.js", "TypeScript", "Node.js", "MongoDb","Gemini-AI"],
+    liveUrl: "",
+    githubUrl: "https://github.com/bari199/AI-MERN-BLOG-APP.git",
+    featured: true,
     category: "Web App",
   },
 
   {
     id: 6,
-    title: "Expense Tracker App",
+    title: "Portfolio Website",
     description:
-      "This app includes user authentication with JWT, income and expense tracking, interactive charts, and the ability to export data in Excel format.",
+      "A modern portfolio website with smooth animations, responsive layouts, and backend support for form submissions. Built using React, Framer Motion, AOS, and Express.js.",
     image: PROJECT_IMG_6,
-    tags: ["Next.js", "TypeScript", "Node.js", "MongoDb"],
-    liveUrl: "https://youtu.be/PQnbtnsYUho",
-    githubUrl: "#",
-    featured: true,
+    tags: ["React.js", "Famer Motion", "Node.js", "express.js"],
+    liveUrl: "",
+    githubUrl: "https://github.com/bari199/Modern-Developer-Portfolio-with-React-Tailwind-CSS-Framer-Motion.git",
+    featured: false,
     category: "Web App",
   },
 

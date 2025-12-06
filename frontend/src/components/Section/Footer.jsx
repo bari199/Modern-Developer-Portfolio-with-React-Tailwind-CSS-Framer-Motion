@@ -55,7 +55,7 @@ const Footer = () => {
   const AnimatedGradientLine = () => (
     <div className="absolute top-0 left-0 w-full h-px overflow-hidden">
       <motion.div
-        className={`h-px bg-gradient-to-r ${
+        className={`h-px bg-linear-to-r ${
           isDarkMode 
             ? 'from-transparent via-blue-500 to-transparent' 
             : 'from-transparent via-blue-600 to-transparent'
@@ -65,7 +65,7 @@ const Footer = () => {
         transition={{ duration: 1.5, ease: "easeInOut" }}
       />
       <motion.div
-        className={`absolute top-0 h-px w-32 bg-gradient-to-r ${
+        className={`absolute top-0 h-px w-32 bg-linear-to-r ${
           isDarkMode
             ? 'from-blue-400 via-purple-500 to-blue-400'
             : 'from-blue-500 via-purple-600 to-blue-500'
@@ -190,10 +190,10 @@ const Footer = () => {
             {/* Copyright */}
             <motion.div variants={itemVariants} className="space-y-2">
               <p className={`text-sm ${isDarkMode ? 'text-gray-500' : 'text-gray-600'}`}>
-                © {new Date().getFullYear()} Time To Program. All rights reserved.
+                © {new Date().getFullYear()} www.coderbari.com. All rights reserved.
               </p>
               <p className={`text-xs ${isDarkMode ? 'text-gray-600' : 'text-gray-500'}`}>
-                Built with React & Framer Motion • Designed with care
+                Built with the Full Stack & SWD • Focused on performance and user experience.
               </p>
             </motion.div>
 
