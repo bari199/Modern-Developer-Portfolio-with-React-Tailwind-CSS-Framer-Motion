@@ -122,6 +122,24 @@ const ProjectCard = ({ project, index, isDarkMode }) => {
               </span>
             ))}
           </div>
+          
+          {/* CTA BUTTONS FOR MOBILE ONLY */}
+          <div className="mt-4 flex sm:hidden gap-3">
+            <a
+              href={project.liveUrl}
+              className="flex-1 bg-blue-500 text-white text-xs py-2 rounded-lg text-center"
+            >
+              Live Demo
+            </a>
+            <a
+              href={project.githubUrl}
+              className="flex-1 border text-xs py-2 rounded-lg text-center
+                border-gray-300 dark:border-gray-600
+                text-gray-700 dark:text-gray-200"
+            >
+              GitHub
+            </a>
+          </div>
         </div>
       </div>
     </motion.div>

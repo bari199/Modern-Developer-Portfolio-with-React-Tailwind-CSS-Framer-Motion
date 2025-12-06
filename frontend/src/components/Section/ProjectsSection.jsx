@@ -71,14 +71,19 @@ const ProjectsSection = () => {
         </motion.div>
 
         {/* Projects Grid */}
-        <motion.div
+         <motion.div
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full"
         >
           {PROJECTS.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} isDarkMode={isDarkMode} />
+            <ProjectCard
+              key={project.id}
+              project={project}
+              index={index}
+              isDarkMode={isDarkMode}
+            />
           ))}
         </motion.div>
 

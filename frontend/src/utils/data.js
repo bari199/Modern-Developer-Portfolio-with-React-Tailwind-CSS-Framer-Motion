@@ -293,7 +293,7 @@ export const SOCIAL_LINKS = [
     {
       icon: MapPin,
       label: "Location",
-      value: "Howrah , WB",
+      value: "India, WB, Howrah, 711310",
     },
     {
       icon: Mail,
