@@ -179,8 +179,8 @@ const HeroSection = () => {
                 </motion.button>
                 {/* Updated Resume Button */}
                 <motion.a
-                  href="/ABDUL BARI.resume.pdf"
-                  download="ABDUL BARI.resume.pdf"
+                  href="./public/profile-doc.pdf"
+                  download="profile-doc.pdf"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   className={`
@@ -340,8 +340,8 @@ const HeroSection = () => {
 
                 {/* Updated Resume Button */}
                 <motion.a
-                  href="/ABDUL BARI.resume.pdf"
-                  download="ABDUL BARI.resume.pdf"
+                  href="./public/profile-doc.pdf"
+                  download="profile-doc.pdf"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   className={`
